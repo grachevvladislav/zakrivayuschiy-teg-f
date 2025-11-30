@@ -1,1 +1,3 @@
 В этой папке будут храниться изображения для статей, а токже фавиконы и иконка для смартфона
+
+Pages: https://grachevvladislav.github.io/zakrivayuschiy-teg-f/
