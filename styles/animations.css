@@ -1,11 +1,112 @@
-/* Опишите в этом файле все keyframes для проекта и стили анимаций иконки Like.
+@keyframes scale-heart {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.25);
+  }
+}
 
-Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
-✦ like-icon — для svg-иконки анимированного сердца
-✦ card__like-button — для кнопки Like рядом с иконкой
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
-✦ button__text — для обозначения текстового элемента внутри кнопки
+@keyframes spark-opacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 
-*/
+.rectangular_button_animation {
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+}
+
+.rectangular_button_animation::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  transform: translateX(-100%);
+  transition: transform 0.5s ease-in-out;
+}
+
+.rectangular_button_animation:hover::before {
+  transform: translateX(0);
+}
+
+.contour {
+  transition: fill 0.1s linear;
+  fill: var(--heart_color);
+}
+
+.main-body {
+  fill: transparent;
+  transition: fill 0.3s linear;
+}
+
+.core {
+  transition: fill 0.3s linear 0.03s;
+  fill: transparent;
+}
+
+.sparks {
+  opacity: 0;
+  fill: var(--contour-color);
+}
+
+.card__icon-button:focus-visible {
+  outline: none;
+  border: 2px solid #000000;
+  transition: border 0.3s ease;
+}
+
+.like-icon:hover .main-body {
+  fill: #000000;
+  transition: fill 0.3s linear 0.05s;
+}
+
+.like-icon:hover .core {
+  fill: #000000;
+  transition: fill 0.3s linear;
+}
+
+.like-icon:active .main-body {
+  fill: #FF0000;
+  transition: fill 0.3s linear 0.05s;
+}
+
+.like-icon:active .core {
+  fill: #FF0000;
+  transition: fill 0.3s linear;
+}
+
+.like-icon.is-liked .core {
+  fill: #FF0000;
+  transition: fill 0.3s linear;
+}
+
+.like-icon.is-liked .main-body {
+  fill: #FF0000;
+  transition: fill 0.3s linear 0.05s;
+}
+
+.like-icon.is-liked .contour {
+  fill: #FF0000;
+  transition: fill 0.3s linear 0.06s;
+}
+
+.heart {
+  transform-origin: center;
+}
+
+.is-liked .heart {
+  animation: scale-heart 0.3s ease-in 0.1s 1 normal;
+}
+
+.is-liked .sparks {
+  animation: spark-opacity 0.3s ease-in 0.3s 1 normal;
+}
