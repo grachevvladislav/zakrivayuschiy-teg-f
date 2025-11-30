@@ -135,7 +135,7 @@
   font-weight: 410;
   font-size: 18px;
   line-height: 21px;
-  font-family: var(--font-main), sans-serif;;
+  font-family: var(--font-main), sans-serif;
   font-style: normal;
   font-variation-settings: 'slnt' 0;
   letter-spacing: 0.4px;
@@ -165,8 +165,7 @@
   cursor: pointer;
 }
 
-.card__like-button:focus
-{
+.card__like-button:focus {
   outline: none;
   box-shadow: 2px 2px 0 #000;
 }
@@ -260,6 +259,7 @@
 @media (width <= 375px) {
   .button__save {
     flex-direction: column;
+    gap: 9px;
   }
 
   .button__save-icon {
@@ -267,11 +267,7 @@
     inline-size: 28px;
   }
 
-  .button__save {
-    gap: 9px;
-  }
-
   .save__dialog {
-  padding: 30px 40px;
+    padding: 30px 40px;
   }
 }
