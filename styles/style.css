@@ -1,6 +1,6 @@
 .page {
   font-family: var(--font-main), sans-serif;
-  font-variation-settings: 'wght' var(--font-weight-text, 400);
+  font-variation-settings: 'wght' var(--font-weight-text, 410);
   background-image: var(--background-gradient);
   background-size: cover;
   background-attachment: fixed;
@@ -22,7 +22,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-family: var(--font-accent), serif;
+  font-family: var(--font-accent), fantasy;
   color: #000000;
   text-transform: uppercase;
   gap: 20px;
@@ -44,7 +44,7 @@
   flex-direction: column;
   gap: 50px;
   align-items: center;
-  margin-bottom: 100px;
+  margin-block-end: 100px;
 }
 
 .card {
@@ -56,9 +56,10 @@
   background: #FFFFFF;
   font-weight: 715;
   font-size: 18px;
-  line-height: 22px;
+  line-height: 1.2em;
   color: #000000;
   border-bottom: 2px solid #000000;
+  font-variation-settings: 'slnt' 0;
 }
 
 .card__container {
@@ -72,31 +73,31 @@
   display: block;
 }
 
-.image__filter_1 {
+.image__filter_sepia {
   filter: sepia(70%);
 }
 
-.image__filter_2 {
+.image__filter_height_saturate {
   filter: saturate(500%);
 }
 
-.image__filter_3 {
+.image__filter_low_saturate {
   filter: saturate(50%);
 }
 
-.image__filter_4 {
+.image__filter_invert {
   filter: invert(0.7);
 }
 
-.image__filter_5 {
+.image__filter_saturate_sepia_saturate {
   filter: saturate(20%) sepia(70%) saturate(80%);
 }
 
-.image__filter_6 {
+.image__filter_blur {
   filter: blur(10px);
 }
 
-.image__filter_7 {
+.image__filter_hue-rotate {
   filter: hue-rotate(180deg);
 }
 
@@ -108,15 +109,17 @@
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
-  line-height: 14px;
+  line-height: 1em;
   color: #000000;
   mix-blend-mode: hard-light;
   opacity: 0.5;
-  -webkit-text-stroke: 1px #fff;
+  text-shadow: 0 0 2px #fff, 0 0 4px #fff
 }
 
-@supports (text-stroke: 1px #fff) {
+@supports (-webkit-text-stroke: 1px #fff) or (text-stroke: 1px #fff) {
   .card__label {
+    text-shadow: none;
+    -webkit-text-stroke: 1px #fff;
     text-stroke: 1px #fff;
   }
 }
@@ -134,11 +137,10 @@
 .card__description p {
   font-weight: 410;
   font-size: 18px;
-  line-height: 21px;
+  line-height: 1.2em;
   font-family: var(--font-main), sans-serif;
   font-style: normal;
   font-variation-settings: 'slnt' 0;
-  letter-spacing: 0.4px;
 }
 
 .card__description p:last-child {
@@ -175,7 +177,7 @@
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
-  line-height: 90%;
+  line-height: 0.9em;
   white-space: nowrap;
   position: relative;
   z-index: 1;
@@ -236,7 +238,8 @@
   font-family: var(--font-accent), serif;
   font-weight: 400;
   font-size: 14px;
-  line-height: 150%;
+  line-height: 1.5em;
+  max-inline-size: 234px;
 }
 
 .save__dialog-button {
@@ -246,7 +249,7 @@
   font-family: var(--font-accent), serif;
   font-weight: 400;
   font-size: 14px;
-  line-height: 90%;
+  line-height: 0.9em;
   color: #000000;
   padding: 10.5px 0;
   cursor: pointer;

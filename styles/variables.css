@@ -2,8 +2,7 @@
   --font-main: 'Inter', sans-serif;
   --font-accent: 'PressStart2P', fantasy;
 
-  --font-weight-text: 400;
-  --font-weight-title: 700;
+  --font-weight-text: 410;
 
   --background-gradient:
           repeating-linear-gradient(to right, #d3d3d3 0 2px, transparent 2px 4px),
