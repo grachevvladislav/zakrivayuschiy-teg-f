@@ -54,12 +54,11 @@
 .card__title {
   padding: 4px 10px;
   background: #FFFFFF;
-  font-weight: 715;
   font-size: 18px;
   line-height: 1.2em;
   color: #000000;
   border-bottom: 2px solid #000000;
-  font-variation-settings: 'slnt' 0;
+  font-variation-settings: 'wght' 715;
 }
 
 .card__container {
@@ -157,6 +156,7 @@
   inline-size: 39px;
   block-size: 36px;
   cursor: pointer;
+  transition: border 0.3s ease;
 }
 
 .card__like-button {
